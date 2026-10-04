@@ -1,0 +1,37 @@
+﻿
+@model IEnumerable<practical_6.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{ 
+    Layout = null;
+}
+
+<h2>Product Catalog</h2>
+<table border="1">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Description</th>
+        <th>Product Category</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.ProductId</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Description</td>
+            <td>@product.Category</td>
+            <td>
+                @Html.ActionLink("View Details", "Details","Product", new { id = product.ProductId },null)
+            </td>
+        </tr>
+    }
+</table>
+
+<h1>Dhruv Javiya - 92510120050</h1>

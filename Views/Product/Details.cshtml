@@ -1,0 +1,25 @@
+@model practical_6.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Product Details</h2>
+
+@if(Model != null)
+{
+<p>Product ID: @Model.ProductId</p>
+<p>Product Name: @Model.Name</p>
+<p>Product Price: @Model.Price</p>
+<p>Product Description: @Model.Description</p>
+<p>Product Category: @Model.Category</p>
+}
+else
+{
+    <p>Product not found.</p>
+}
+<br/>
+@Html.ActionLink("Back to Product Catalog", "Index", "Product")
+
+}
